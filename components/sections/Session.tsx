@@ -21,7 +21,7 @@ const ROWS: Array<{
   overlay?: CardOverlay;
 }> = [
   {
-    image: "/CARD_SESSION.png",
+    image: "/CARD_SESSION.jpg",
     width: 678,
     height: 525,
     imageSide: "left",
@@ -37,7 +37,7 @@ const ROWS: Array<{
     },
   },
   {
-    image: "/ON_DEMANDE.png",
+    image: "/ON_DEMANDE.jpg",
     width: 678,
     height: 525,
     imageSide: "right",
@@ -54,7 +54,7 @@ const ROWS: Array<{
     },
   },
   {
-    image: "/REPLAY.png",
+    image: "/REPLAY2.jpg",
     width: 678,
     height: 523,
     imageSide: "left",

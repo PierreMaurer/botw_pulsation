@@ -1,5 +1,6 @@
 import { Navbar, Footer, Hero, DanceTypes, Pricing } from "@/components";
 import Session from "@/components/sections/Session";
+import Lenis from 'lenis'
 
 export default function Home() {
   return (
