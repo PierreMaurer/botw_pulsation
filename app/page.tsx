@@ -3,15 +3,15 @@ import Session from "@/components/sections/Session";
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main>
-          <Hero />
+      <main className="flex-1 overflow-x-hidden max-w-full">
+        <Hero />
         <DanceTypes />
-          <Session/>
+        <Session />
         <Pricing />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

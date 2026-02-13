@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --Primaire-Blanc: #F4F4F4;
+  --Primaire-Noir: #1A1A1B;
+  --Noir-main: #121212;
 }
 
 @theme inline {
@@ -12,6 +15,14 @@
   --font-display: var(--font-syne);
 }
 
+
+html,
+body {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
 
 body {
   background: var(--background);

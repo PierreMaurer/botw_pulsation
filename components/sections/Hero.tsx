@@ -1,22 +1,54 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useLayoutEffect, useEffect, useState, useCallback } from "react";
 import ButtonJOIN from "@/components/ui/Button";
+
+function tryPlay(video: HTMLVideoElement | null) {
+  if (!video) return;
+  video.volume = 0.3;
+  video.muted = true;
+  video.play().catch(() => {});
+}
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isSoundOn, setIsSoundOn] = useState(true);
+  const [isSoundOn, setIsSoundOn] = useState(false);
+
+  useLayoutEffect(() => {
+    tryPlay(videoRef.current);
+  }, []);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.volume = 0.3;
-      videoRef.current.muted = false;
-    }
+    tryPlay(videoRef.current);
+    const interval = setInterval(() => {
+      const el = videoRef.current;
+      if (el?.paused) tryPlay(el);
+    }, 250);
+    const stop = setTimeout(() => clearInterval(interval), 3000);
+    return () => {
+      clearTimeout(stop);
+      clearInterval(interval);
+    };
+  }, []);
+
+  const handleCanPlay = useCallback(() => {
+    tryPlay(videoRef.current);
+  }, []);
+
+  const handleLoadedData = useCallback(() => {
+    tryPlay(videoRef.current);
+  }, []);
+
+  const setVideoRef = useCallback((el: HTMLVideoElement | null) => {
+    (videoRef as React.MutableRefObject<HTMLVideoElement | null>).current = el;
+    if (el) tryPlay(el);
   }, []);
 
   const handleSoundOn = () => {
     if (videoRef.current) {
+      videoRef.current.volume = 0.3;
       videoRef.current.muted = false;
+      videoRef.current.play().catch(() => {});
       setIsSoundOn(true);
     }
   };
@@ -29,12 +61,16 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full min-w-0 overflow-hidden">
       <video
-        ref={videoRef}
+        ref={setVideoRef}
         autoPlay
         loop
         playsInline
+        muted
+        preload="auto"
+        onCanPlay={handleCanPlay}
+        onLoadedData={handleLoadedData}
         className="absolute inset-0 h-full w-full object-cover"
       >
         <source src="/hero_video.mp4" type="video/mp4" />
@@ -62,6 +98,12 @@ export default function Hero() {
           className={`cursor-pointer ${!isSoundOn ? "opacity-100" : "opacity-50"}`}
         >
           OFF
+        </span>
+      </div>
+      <div className="absolute left-1/2 bottom-0 z-10 flex -translate-x-1/2 flex-col-reverse items-center gap-3">
+        <div className="h-[60px] w-[2px] bg-[var(--Primaire-Blanc,#F4F4F4)]" />
+        <span className="text-center font-sans text-[15.6px] font-light leading-normal tracking-[1.56px] uppercase text-[var(--Primaire-Blanc,#F4F4F4)]">
+          SCROLL
         </span>
       </div>
     </section>

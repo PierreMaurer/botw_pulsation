@@ -25,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${plusJakarta.variable} antialiased`}
+        className={`${syne.variable} ${plusJakarta.variable} antialiased overflow-x-hidden min-w-0 w-full`}
       >
-        {children}
+        <div className="overflow-x-hidden min-w-0 w-full">
+          {children}
+        </div>
       </body>
     </html>
   );
