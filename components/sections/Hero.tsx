@@ -75,16 +75,16 @@ export default function Hero() {
       >
         <source src="/hero_video.mp4" type="video/mp4" />
       </video>
-      <div className="relative z-10 flex h-full items-center justify-center">
-        <div className="flex flex-col items-center gap-[35px]">
-          <div className="flex flex-col gap-[50px] items-center">
-            <p className="text-white/80 text-center font-['Syne'] text-[128.6px] font-normal tracking-[12.86px] uppercase leading-normal">SYNC</p>
-            <p className="text-[var(--Primaire-Blanc,#F4F4F4)] text-center font-['Syne'] text-[25px] font-normal tracking-[2.5px] uppercase">YOUR DANCE, EVERY WHERE, EVERY TIME</p>
+      <div className="relative z-10 flex h-full items-center justify-center px-4">
+        <div className="flex flex-col items-center gap-6 sm:gap-[35px]">
+          <div className="flex flex-col gap-6 sm:gap-[50px] items-center">
+            <p className="text-white/80 text-center font-['Syne'] text-[56px] sm:text-[80px] md:text-[100px] lg:text-[128.6px] font-normal tracking-[6px] sm:tracking-[10px] lg:tracking-[12.86px] uppercase leading-normal">SYNC</p>
+            <p className="text-[var(--Primaire-Blanc,#F4F4F4)] text-center font-['Syne'] text-[14px] sm:text-[18px] md:text-[22px] lg:text-[25px] font-normal tracking-[1.5px] sm:tracking-[2.5px] uppercase max-w-[320px] sm:max-w-none">YOUR DANCE, EVERY WHERE, EVERY TIME</p>
           </div>
           <ButtonJOIN>JOIN SYNC</ButtonJOIN>
         </div>
       </div>
-      <div className="absolute left-[42px] bottom-[32px] z-10 flex flex-row items-center gap-1 text-[#F4F4F4] text-center font-sans text-[15.6px] font-light tracking-[1.56px] uppercase">
+      <div className="absolute left-4 sm:left-6 lg:left-[42px] bottom-6 lg:bottom-[32px] z-10 flex flex-row items-center gap-1 text-[#F4F4F4] text-center font-sans text-[13px] sm:text-[15.6px] font-light tracking-[1.56px] uppercase">
         <span className="mr-[17px]">SOUND</span>
         <span
           onClick={handleSoundOn}
@@ -100,9 +100,9 @@ export default function Hero() {
           OFF
         </span>
       </div>
-      <div className="absolute left-1/2 bottom-0 z-10 flex -translate-x-1/2 flex-col-reverse items-center gap-3">
-        <div className="h-[60px] w-[2px] bg-[var(--Primaire-Blanc,#F4F4F4)]" />
-        <span className="text-center font-sans text-[15.6px] font-light leading-normal tracking-[1.56px] uppercase text-[var(--Primaire-Blanc,#F4F4F4)]">
+      <div className="absolute left-1/2 bottom-2 sm:bottom-0 z-10 flex -translate-x-1/2 flex-col-reverse items-center gap-2 sm:gap-3">
+        <div className="h-[40px] sm:h-[60px] w-[2px] bg-[var(--Primaire-Blanc,#F4F4F4)]" />
+        <span className="text-center font-sans text-[13px] sm:text-[15.6px] font-light leading-normal tracking-[1.56px] uppercase text-[var(--Primaire-Blanc,#F4F4F4)]">
           SCROLL
         </span>
       </div>

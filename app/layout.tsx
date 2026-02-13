@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { SmoothScroll } from "@/components/layout";
 import "./globals.css";
 
 const syne = Syne({
@@ -11,6 +12,11 @@ const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,9 +33,11 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${plusJakarta.variable} antialiased overflow-x-hidden min-w-0 w-full`}
       >
-        <div className="overflow-x-hidden min-w-0 w-full">
-          {children}
-        </div>
+        <SmoothScroll>
+          <div className="overflow-x-hidden min-w-0 w-full">
+            {children}
+          </div>
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -16,7 +16,14 @@
 }
 
 
-html,
+html {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  scrollbar-gutter: stable;
+}
+
 body {
   overflow-x: clip;
   width: 100%;
@@ -28,4 +35,21 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+@keyframes session-subtitle-glitch {
+  0%,
+  100% {
+    transform: scale(1.02) translate(0, 0);
+  }
+  33% {
+    transform: scale(1.02) translate(-0.5px, 0.5px);
+  }
+  66% {
+    transform: scale(1.02) translate(0.5px, -0.5px);
+  }
+}
+
+.group:hover .session-subtitle-glitch {
+  animation: session-subtitle-glitch 0.14s ease-in-out;
 }
