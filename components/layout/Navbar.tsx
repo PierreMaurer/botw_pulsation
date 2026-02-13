@@ -5,6 +5,14 @@ import { useState } from "react";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleScroll = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false);
+    }
+  };
+
   return (
     <nav className="absolute top-0 left-0 right-0 z-50">
       <div className="flex w-full max-w-[1440px] mx-auto h-[72px] sm:h-[88px] lg:h-[100px] px-4 sm:px-6 md:px-[42px] justify-between items-center">
@@ -14,9 +22,9 @@ export default function Navbar() {
           </p>
         </div>
         <div className="hidden md:flex h-[63px] py-[10px] pr-[20px] pl-[1px] justify-center items-center gap-8 lg:gap-[90px]">
-          <p className="text-white hover:underline cursor-pointer text-sm lg:text-base">SCHEDULE</p>
-          <p className="text-white hover:underline cursor-pointer text-sm lg:text-base">ON-DEMAND</p>
-          <p className="text-white hover:underline cursor-pointer text-sm lg:text-base">THE STUDIO</p>
+        <p className="text-white hover:underline cursor-pointer text-sm lg:text-base" onClick={() => handleScroll("dance-types")}>THE STUDIO</p>
+          <p className="text-white hover:underline cursor-pointer text-sm lg:text-base" onClick={() => handleScroll("session")}>SCHEDULE</p>
+          <p className="text-white hover:underline cursor-pointer text-sm lg:text-base" onClick={() => handleScroll("pricing")}>PRICING</p>
         </div>
         <div className="hidden md:flex py-[10px] justify-end items-center gap-2.5">
           <p className="text-white hover:underline cursor-pointer text-sm lg:text-base">JOIN SYNC</p>
@@ -33,9 +41,9 @@ export default function Navbar() {
 
       <div className={`md:hidden absolute top-[72px] sm:top-[88px] left-0 right-0 bg-black/95 transition-all ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
         <div className="flex flex-col items-center gap-6 py-8">
-          <p className="text-white hover:underline cursor-pointer">SCHEDULE</p>
-          <p className="text-white hover:underline cursor-pointer">ON-DEMAND</p>
-          <p className="text-white hover:underline cursor-pointer">THE STUDIO</p>
+          <p className="text-white hover:underline cursor-pointer" onClick={() => handleScroll("dance-types")}>THE STUDIO</p>
+          <p className="text-white hover:underline cursor-pointer" onClick={() => handleScroll("session")}>SCHEDULE</p>
+          <p className="text-white hover:underline cursor-pointer" onClick={() => handleScroll("pricing")}>PRICING</p>
           <p className="text-white hover:underline cursor-pointer">JOIN SYNC</p>
         </div>
       </div>

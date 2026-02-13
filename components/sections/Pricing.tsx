@@ -136,7 +136,7 @@ function PricingCard({
 
 export default function Pricing() {
   return (
-    <section className="w-full min-w-0 bg-white overflow-x-hidden">
+    <section id="pricing" className="w-full min-w-0 bg-white overflow-x-hidden">
       <div className="w-full min-w-0 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <ScrollReveal as="div" className="w-full pt-16 sm:pt-20 lg:pt-[122px] pb-12 sm:pb-16 lg:pb-[122px] flex flex-col items-center" y={14} duration={0.5}>
           <p

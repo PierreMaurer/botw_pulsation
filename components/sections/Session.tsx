@@ -199,7 +199,7 @@ function TextBlock({
 
 export default function Session() {
   return (
-    <section className="flex w-full min-w-0 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[42px] flex-col items-center bg-white overflow-x-hidden">
+    <section id="session" className="flex w-full min-w-0 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-[42px] flex-col items-center bg-white overflow-x-hidden">
       <div className="w-full pt-16 sm:pt-20 lg:pt-[122px] pb-12 sm:pb-16 lg:pb-[122px] flex flex-col items-center">
         <p className="text-center text-black font-sans text-[20px] sm:text-[22px] lg:text-[26px] font-normal tracking-[2.6px] uppercase">
           SYNCED SCHEDULE
