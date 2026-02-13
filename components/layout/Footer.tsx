@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-0">
           <div className="w-full md:w-1/2 flex flex-col items-center justify-center pt-0">
             <div
-              className="flex flex-shrink-0 flex-col justify-center text-center font-display font-normal leading-normal uppercase text-[var(--Noir-main,#121212)] w-[280px] h-[60px] sm:w-[320px] sm:h-[70px] md:w-[366px] md:h-[83px] text-[56px] sm:text-[72px] md:text-[102.6px] tracking-[6px] sm:tracking-[8px] md:tracking-[10.26px]"
+              className="flex flex-shrink-0 flex-col justify-center text-center font-display font-extralight leading-normal uppercase text-[var(--Noir-main,#121212)] w-[280px] h-[60px] sm:w-[320px] sm:h-[70px] md:w-[366px] md:h-[83px] text-[56px] sm:text-[72px] md:text-[102.6px] tracking-[6px] sm:tracking-[8px] md:tracking-[10.26px]"
             >
               SYNC
             </div>

@@ -8,6 +8,7 @@ const PRICING_CARDS: Array<{
   price: string;
   description: string;
   image: string;
+  imagePosition?: "center" | "top";
 }> = [
   {
     titleLines: ["SINGLE", "CLASS"],
@@ -15,13 +16,15 @@ const PRICING_CARDS: Array<{
     price: "19.99$/session",
     description:
       "One-shot access to any studio or live session. No strings attached, just show up and sync.",
+    imagePosition: "center",
   },
   {
     titleLines: ["Member", "SHIP"],
-    image: "/CARDPRICING2.jpg",
+    image: "/CARDPRICING2V.jpg",
     price: "19.99$/Months",
     description:
       "Unlimited access to all live sessions and the replay library. Your studio, your rhythm.",
+    imagePosition: "top",
   },
   {
     titleLines: ["ON", "DEMAND"],
@@ -29,6 +32,7 @@ const PRICING_CARDS: Array<{
     price: "49.99$/session",
     description:
       "Custom class tailored to you. Schedule when it suits you and sync at your own pace.",
+    imagePosition: "top",
   },
 ];
 
@@ -40,17 +44,19 @@ function PricingCard({
   price,
   description,
   image,
+  imagePosition = "center",
 }: {
   titleLines: [string, string];
   price: string;
   description: string;
   image: string;
+  imagePosition?: "center" | "top";
 }) {
   return (
     <div
       className="group relative flex h-[220px] sm:h-[246px] w-full min-w-0 max-w-[400px] mx-auto flex-col overflow-hidden rounded-[20px] sm:rounded-[25px] px-0.5 transition-[height] duration-300 ease-out hover:h-[520px] sm:hover:h-[578px]"
       style={{
-        background: `url(${image}) lightgray 50% / cover no-repeat`,
+        background: `url(${image}) lightgray ${imagePosition} / cover no-repeat`,
       }}
     >
       <div className="absolute inset-0 pointer-events-none">
@@ -60,6 +66,7 @@ function PricingCard({
           width={260}
           height={182}
           className="absolute bottom-0 left-0 w-[65%] max-w-[260px] h-auto opacity-100 object-left-bottom"
+          style={{ height: 'auto' }}
           aria-hidden
         />
         <Image
@@ -67,7 +74,8 @@ function PricingCard({
           alt=""
           width={400}
           height={578}
-          className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
+          className={`absolute inset-0 w-full h-full object-cover ${imagePosition === "top" ? "object-top" : "object-center"} opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100`}
+          style={{ width: '100%', height: '100%' }}
           aria-hidden
         />
         <Image
@@ -76,6 +84,7 @@ function PricingCard({
           width={260}
           height={182}
           className="absolute bottom-0 left-0 w-[65%] max-w-[260px] h-auto object-left-bottom opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-90"
+          style={{ height: 'auto' }}
           aria-hidden
         />
       </div>
@@ -153,6 +162,7 @@ export default function Pricing() {
                 price={card.price}
                 description={card.description}
                 image={card.image}
+                imagePosition={card.imagePosition}
               />
             </ScrollRevealStaggerItem>
           ))}

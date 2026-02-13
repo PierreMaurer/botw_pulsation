@@ -134,6 +134,7 @@ function SessionCard({
           width={280}
           height={200}
           className="absolute top-0 left-0 w-[60%] max-w-[280px] h-auto opacity-90 object-left-top"
+          style={{ height: 'auto' }}
           aria-hidden
         />
       </div>
