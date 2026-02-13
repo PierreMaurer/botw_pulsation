@@ -63,13 +63,13 @@ export default function Footer() {
                 ))}
               </nav>
             </div>
-            <div className="flex w-full justify-center md:justify-end pt-6 md:pt-8 pb-4">
+          </div>
+        </div>
+        <div className="flex w-full justify-center md:justify-center pt-6 md:pt-8 pb-4">
               <div className="flex h-[30px] w-full max-w-[443px] md:w-[443px] flex-shrink-0 flex-col justify-center text-center font-sans text-[10px] sm:text-[11px] font-light leading-normal tracking-[1.1px] uppercase text-black">
                 © 2026 SYNC STUDIO. ALL RIGHTS RESERVED.
               </div>
             </div>
-          </div>
-        </div>
       </div>
     </footer>
   );

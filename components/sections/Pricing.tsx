@@ -7,21 +7,25 @@ const PRICING_CARDS: Array<{
   titleLines: [string, string];
   price: string;
   description: string;
+  image: string;
 }> = [
   {
     titleLines: ["SINGLE", "CLASS"],
+    image: "/CARDPRICING1.jpg",
     price: "19.99$/session",
     description:
       "One-shot access to any studio or live session. No strings attached, just show up and sync.",
   },
   {
     titleLines: ["Member", "SHIP"],
+    image: "/CARDPRICING2.jpg",
     price: "19.99$/Months",
     description:
       "Unlimited access to all live sessions and the replay library. Your studio, your rhythm.",
   },
   {
     titleLines: ["ON", "DEMAND"],
+    image: "/CARDPRICING3.jpg",
     price: "49.99$/session",
     description:
       "Custom class tailored to you. Schedule when it suits you and sync at your own pace.",
@@ -35,16 +39,18 @@ function PricingCard({
   titleLines,
   price,
   description,
+  image,
 }: {
   titleLines: [string, string];
   price: string;
   description: string;
+  image: string;
 }) {
   return (
     <div
       className="group relative flex h-[220px] sm:h-[246px] w-full min-w-0 max-w-[400px] mx-auto flex-col overflow-hidden rounded-[20px] sm:rounded-[25px] px-0.5 transition-[height] duration-300 ease-out hover:h-[520px] sm:hover:h-[578px]"
       style={{
-        background: 'url("/CARD PRICING.png") lightgray 50% / cover no-repeat',
+        background: `url(${image}) lightgray 50% / cover no-repeat`,
       }}
     >
       <div className="absolute inset-0 pointer-events-none">
@@ -57,7 +63,7 @@ function PricingCard({
           aria-hidden
         />
         <Image
-          src="/IMAGEHOVER.jpg"
+          src={image}
           alt=""
           width={400}
           height={578}
@@ -94,34 +100,34 @@ function PricingCard({
             aria-hidden
           >
             <div className="flex flex-col items-center gap-3 sm:gap-4">
-            <div
-              className="flex flex-col items-center gap-0 text-center font-display text-[32px] sm:text-[40px] font-bold leading-none tracking-[4px] uppercase !text-[var(--Primaire-Blanc)]"
-            >
-              <span>{titleLines[0]}</span>
-              <span>{titleLines[1]}</span>
+              <div
+                className="flex flex-col items-center gap-0 text-center font-display text-[32px] sm:text-[40px] font-bold leading-none tracking-[4px] uppercase !text-[var(--Primaire-Blanc)]"
+              >
+                <span>{titleLines[0]}</span>
+                <span>{titleLines[1]}</span>
+              </div>
+              <div
+                className="flex min-h-[80px] sm:min-h-[112px] w-full max-w-[192px] flex-col justify-center text-center font-sans text-[13px] sm:text-[15.6px] font-medium leading-normal tracking-[1.56px] uppercase"
+                style={{ color: "var(--Primaire-Blanc, #F4F4F4)" }}
+              >
+                {description}
+              </div>
             </div>
             <div
-              className="flex min-h-[80px] sm:min-h-[112px] w-full max-w-[192px] flex-col justify-center text-center font-sans text-[13px] sm:text-[15.6px] font-medium leading-normal tracking-[1.56px] uppercase"
+              className="absolute bottom-[19px] left-1/2 -translate-x-1/2 flex min-h-[23px] w-[192px] flex-col justify-center text-center font-sans text-[14px] sm:text-[15.6px] font-light leading-normal tracking-[1.56px] uppercase gap-3"
               style={{ color: "var(--Primaire-Blanc, #F4F4F4)" }}
             >
-              {description}
+              <p>{price}</p>
+              <button
+                type="button"
+                className="flex w-full max-w-[190px] h-[52px] sm:h-[60px] px-[27px] justify-center items-center gap-[10px] rounded-[30px] border-2 border-[var(--Primaire-Blanc,#F4F4F4)] bg-transparent font-display text-[17px] sm:text-[20px] font-normal tracking-[2px] uppercase whitespace-nowrap transition-colors hover:bg-[var(--Primaire-Blanc,#F4F4F4)] hover:!text-black"
+                style={{
+                  color: "var(--Primaire-Blanc, #F4F4F4)",
+                }}
+              >
+                BOOK NOW
+              </button>
             </div>
-            <div
-              className="flex min-h-[23px] w-[192px] flex-col justify-center text-center font-sans text-[14px] sm:text-[15.6px] font-light leading-normal tracking-[1.56px] uppercase"
-              style={{ color: "var(--Primaire-Blanc, #F4F4F4)" }}
-            >
-              {price}
-            </div>
-            <button
-              type="button"
-              className="flex w-full max-w-[190px] h-[52px] sm:h-[60px] px-[27px] justify-center items-center gap-[10px] rounded-[30px] border-2 border-[var(--Primaire-Blanc,#F4F4F4)] bg-transparent font-display text-[17px] sm:text-[20px] font-normal tracking-[2px] uppercase whitespace-nowrap transition-colors hover:bg-[var(--Primaire-Blanc,#F4F4F4)] hover:!text-black"
-              style={{
-                color: "var(--Primaire-Blanc, #F4F4F4)",
-              }}
-            >
-              BOOK NOW
-            </button>
-          </div>
         </div>
       </div>
     </div>
@@ -146,6 +152,7 @@ export default function Pricing() {
                 titleLines={card.titleLines}
                 price={card.price}
                 description={card.description}
+                image={card.image}
               />
             </ScrollRevealStaggerItem>
           ))}

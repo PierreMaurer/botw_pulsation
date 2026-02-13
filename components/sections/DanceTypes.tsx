@@ -9,13 +9,13 @@ export default function DanceTypes() {
       </ScrollReveal>
       <ScrollRevealStagger as="div" className="flex flex-row gap-40 justify-center items-start" staggerDelay={0.12} amount={0.08}>
         <ScrollRevealStaggerItem>
-          <Card image="Contemporary.png" header="CONTEMPORARY" title="UNBOUND" description="Master the art of movement through a structured blend of floorwork, fluidity, and creative expression. Designed for those seeking technical growth and artistic release." hideGrainOnHover />
+          <Card image="Contemporary.jpg" header="CONTEMPORARY" title="UNBOUND" description="Master the art of movement through a structured blend of floorwork, fluidity, and creative expression. Designed for those seeking technical growth and artistic release." hideGrainOnHover />
         </ScrollRevealStaggerItem>
         <ScrollRevealStaggerItem>
-          <Card image="ONDEMANDE.png" header="ON-DEMAND" title="LIMITLESS" description="Your studio follows you wherever you go. Access a curated library of live sessions and 4K replays. High-quality guidance from our instructors, synchronized with your busy lifestyle." hideGrainOnHover />
+          <Card image="ONDEMANDE.jpg" header="ON-DEMAND" title="LIMITLESS" description="Your studio follows you wherever you go. Access a curated library of live sessions and 4K replays. High-quality guidance from our instructors, synchronized with your busy lifestyle." hideGrainOnHover />
         </ScrollRevealStaggerItem>
         <ScrollRevealStaggerItem>
-          <Card image="HIPHOP.png" header="HIP HOP" title="IGNITE" description="Sync your body to the urban beat. Master the foundations of street dance with high-energy sessions designed to build confidence, rhythm, and your own unique flow." hideGrainOnHover />
+          <Card image="HIPHOP.jpg" header="HIP HOP" title="IGNITE" description="Sync your body to the urban beat. Master the foundations of street dance with high-energy sessions designed to build confidence, rhythm, and your own unique flow." hideGrainOnHover />
         </ScrollRevealStaggerItem>
       </ScrollRevealStagger>
     </section>

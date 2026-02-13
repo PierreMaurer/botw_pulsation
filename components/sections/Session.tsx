@@ -241,8 +241,8 @@ export default function Session() {
               width={ROWS[1].width}
               height={ROWS[1].height}
               overlay={ROWS[1].overlay}
+              imageLiftOnHover
               overlayZoomOnHover
-              hoverReplaceImageSrc={ROWS[1].image}
               fillContainer
             />
           </div>
@@ -254,7 +254,7 @@ export default function Session() {
               height={ROWS[2].height}
               overlay={ROWS[2].overlay}
               overlayZoomOnHover
-              hoverReplaceImageSrc={ROWS[0].image}
+              imageLiftOnHover
               fillContainer
             />
           </div>
